@@ -4,32 +4,37 @@ Describe: vowelCounter();
     Code: vowelCounter("a");
     Expected Output: 1
 
-2.Test: "It recognizes a single vowel regardless of case."
+2. Test: "It ignores non-alphabetical characters since they can't be vowels."
+    Code: vowelCounter("*&$92%");
+    Expected Output: 0
+
+3.Test: "It recognizes a single vowel regardless of case."
     Code: vowelCounter("A");
     Expected Output: 1
 
-3.
+4.Test: "It recognizes a single vowel in a word with multiple characters."
+    Code: vowelCounter("cat");
+    Expected Output: 1
 
-4.
+5.Test: "It recognizes multiple vowels in a single word."
+    Code: vowelCounter("cater");
+    Expected Output: 2
 
-5.
+6.Test: "It recognizes vowels in a multiple-word sentence."
+    Code: vowelCounter("cats catered the event");
+    Expected Output: 7
 
-6.
-
-7.
-Test: "It recognizes vowels in a multiple word sentence regardless of capitalization."
-Code: vowelCounter("CATS CATERED THE EVENT");
-Expected Output: 7
-
-Test: "It recognizes a single vowel in a word with multiple characters."
-Code: vowelCounter("cat");
-Expected Output: 1
-
+7.Test: "It recognizes vowels in a multiple word sentence regardless of     capitalization."
+    Code: vowelCounter("CATS CATERED THE EVENT");
+    Expected Output: 7
 
 
-Test: "It recognizes multiple vowels in a single word."
-Code: vowelCounter("cater");
-Expected Output: 2
+
+
+
+
+
+
 
 
 
@@ -37,10 +42,5 @@ Test: "It recognizes all vowels in a multiple-word sentence regardless of incons
 Code: vowelCounter("CaTS CATEReD ThE EveNT");
 Expected Output: 7
 
-Test: "It ignores non-alphabetical characters since they can't be vowels."
-Code: vowelCounter("*&$92%");
-Expected Output: 0
 
-Test: "It recognizes vowels in a multiple-word sentence."
-Code: vowelCounter("cats catered the event");
-Expected Output: 7
+
