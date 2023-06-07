@@ -28,6 +28,31 @@ function numberOfOccurrencesInText(word, text) {
     return wordCount;
 }
 
+function firstInstanceOfWord(word, text) {
+    const textArray = text.split(" ");
+    for (let i = 0; i < textArray.length; i++) {
+        console.log(i);
+        if (word === textArray[i]) {
+        return i;
+        }
+    }
+    return -1;
+}
+
+// function isEmpty(testString) {
+//     return (testString.trim().length === 0);
+// }
+
+function isEmpty() {
+    for (let i=0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+        if (arguments[i].trim().length === 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // UI Logic
 
 function handleFormSubmission() {
@@ -45,7 +70,7 @@ window.addEventListener("load", function() {
 });
 
 function boldPassage(word, text) {
-    if ((text.trim().length === 0) || (word.trim().length === 0)) {
+    if (isEmpty(word, text)) {
         return null;
     }
     const p = document.createElement("p");
