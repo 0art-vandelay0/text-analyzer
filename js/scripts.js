@@ -48,4 +48,13 @@ function boldPassage(word, text) {
     if ((text.trim().length === 0) || (word.trim().length === 0)) {
         return null;
     }
+    const p = document.createElement("p");
+    if (word === text) {
+        const bold = document.createElement("strong");
+        bold.append(text);
+        p.append(bold);
+    } else {
+        p.append(text);
+    }
+    return p;
 }
