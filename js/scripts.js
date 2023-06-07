@@ -50,15 +50,17 @@ function boldPassage(word, text) {
     }
     const p = document.createElement("p");
     let textArray = text.split(" ");
-    textArray.forEach(function(element) {
+    textArray.forEach(function(element, index) {
         if (word === element) {
-        const bold = document.createElement("strong");
-        bold.append(element);
-        p.append(bold);
-        }  else {
-        p.append(element);
+            const bold = document.createElement("strong");
+            bold.append(element);
+            p.append(bold);
+        } else {
+            p.append(element);
         }
-        p.append(" ");
+        if (index !== (textArray.length - 1)) {
+            p.append(" ");
+        }
     });
     return p;
 }
